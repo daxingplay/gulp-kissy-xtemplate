@@ -24,7 +24,8 @@ module.exports = function (options) {
 
 		try {
             var xtemp = new Xtemplate(options);
-			file.contents = new Buffer(xtemp._compile(file.contents.toString(), file.path, options.inputCharset, options.outputCharset));
+			file.contents = xtemp._compile(file.contents, file.path, options.inputCharset, options.outputCharset);
+            file.path = file.path.replace(regTail, '.xtpl.js');
 		} catch (err) {
 			this.emit('error', new gutil.PluginError('gulp-kissy-xtemplate', err));
 		}
