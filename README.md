@@ -28,12 +28,30 @@ gulp.task('default', function () {
 
 ### kissyXtemplate(options)
 
-#### options
+## Options
 
-##### foo
+```
+gulp.task('default', function () {
+	return gulp.src('src/app.ext')
+		.pipe(kissyXtemplate({
+			version: '1.5.0', // config your KISSY version
+			inputCharset: 'gbk', // your tpl src charset
+			outputCharset: 'gbk' // compiled charset
+		}))
+		.pipe(gulp.dest('dist'));
+});
+```
 
-Type: `Boolean`  
-Default: `false`
+### Current Supported Versions
+
+* 1.4.0
+* 1.4.1
+* 1.4.2
+* 1.5.0
+* 5.0.0-alpha.1
+* 5.0.0-alpha.2
+* 5.0.0-alpha.10
+* kg-4.1.4
 
 Lorem ipsum.
 
